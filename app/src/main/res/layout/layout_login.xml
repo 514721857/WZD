@@ -1,0 +1,121 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:cube_ptr="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/x298"
+        android:id="@+id/login_icon"
+        android:layout_width="@dimen/x120"
+        android:layout_height="@dimen/x120"
+        cube_ptr:srcCompat="@mipmap/login_icon" />
+
+    <TextView
+        android:textSize="@dimen/x32"
+        android:textColor="@color/colorBlack"
+        android:layout_marginTop="@dimen/x15"
+        android:gravity="center"
+        android:layout_below="@+id/login_icon"
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="微指道" />
+
+
+
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/x38"
+        android:layout_marginRight="@dimen/x38"
+        android:layout_marginTop="@dimen/x100"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/x32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="账号" />
+
+        <com.example.sgr.wzd.widget.ClearEditText
+
+            android:layout_marginLeft="@dimen/x65"
+            android:textColor="@color/colorTextGray"
+            android:textColorHint="@color/colorTextGray"
+            android:textSize="@dimen/x32"
+            android:background="@null"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/login_et_account"
+            android:hint="@string/login_text_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            />
+    </LinearLayout>
+
+<View
+    android:layout_marginTop="@dimen/x10"
+    android:layout_marginLeft="@dimen/x36"
+    android:layout_marginRight="@dimen/x36"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/x1"
+    android:background="@color/colorTextGray"
+    />
+
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/x38"
+        android:layout_marginRight="@dimen/x38"
+        android:layout_marginTop="@dimen/x15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/text_account"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/x32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="密码" />
+
+        <com.example.sgr.wzd.widget.ClearEditText
+            android:layout_marginLeft="@dimen/x65"
+            android:textColor="@color/colorTextGray"
+            android:textColorHint="@color/colorTextGray"
+            android:textSize="@dimen/x32"
+            android:background="@null"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/login_password_hint"
+            android:inputType="textPassword"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="@dimen/x10"
+        android:layout_marginLeft="@dimen/x36"
+        android:layout_marginRight="@dimen/x36"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:background="@color/colorTextGray"
+        />
+
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/x100"
+        android:id="@+id/login_btn"
+        android:layout_width="@dimen/x575"
+        android:layout_height="@dimen/x85"
+        cube_ptr:srcCompat="@mipmap/login_btn_nomal" />
+
+</LinearLayout>
