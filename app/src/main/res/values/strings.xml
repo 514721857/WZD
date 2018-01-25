@@ -3,4 +3,13 @@
     <string name="login_text_hint">请填写您的客户代码</string>
     <string name="login_password_hint">请填写您的手机号码</string>
 
+    <string name="my_head">头像</string>
+    <string name="my_name">名字</string>
+    <string name="my_job">职位</string>
+    <string name="my_sex">性别</string>
+    <string name="my_phone">电话</string>
+    <string name="my_account">读取主账号信息</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

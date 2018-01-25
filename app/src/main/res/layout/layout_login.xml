@@ -111,11 +111,12 @@
         />
 
     <ImageView
+        android:background="@drawable/login_selector"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/x100"
         android:id="@+id/login_btn"
         android:layout_width="@dimen/x575"
         android:layout_height="@dimen/x85"
-        cube_ptr:srcCompat="@mipmap/login_btn_nomal" />
+       />
 
 </LinearLayout>

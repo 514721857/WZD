@@ -32,10 +32,10 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile project(path: ':MvpFramework')
-    compile 'com.android.support:appcompat-v7:26.+'
     //沉浸式标题栏
 
 
+    compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'org.greenrobot:greendao:3.1.0'
@@ -48,7 +48,8 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.6.0'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.28'
     compile 'com.gyf.barlibrary:barlibrary:2.2.9'
+    compile 'com.ldoublem.loadingview:loadingviewlib:1.0'
+    compile 'com.android.support:support-v4:26.+'
     testCompile 'junit:junit:4.12'
     apt 'com.jakewharton:butterknife-compiler:8.6.0'
-    compile 'com.ldoublem.loadingview:loadingviewlib:1.0'
 }

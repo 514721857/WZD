@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:cube_ptr="http://schemas.android.com/apk/res-auto">
+
+    <com.example.sgr.wzd.widget.TextItem
+        cube_ptr:left_text="@string/my_head"
+        cube_ptr:right_img_visbile="0"
+        cube_ptr:right_text_visbile="8"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x135"/>
+
+    <com.example.sgr.wzd.widget.TextItem
+        cube_ptr:left_text="@string/my_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x80"/>
+
+</LinearLayout>

@@ -1,0 +1,119 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/home_top_bg"
+    android:orientation="vertical" >
+    <View
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+    <include
+        android:id="@id/contentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/home_top"/>
+
+    <FrameLayout
+        android:background="@color/colorWihte"
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </FrameLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x100"
+        android:background="@mipmap/home_bottom_bg" >
+
+        <RelativeLayout
+            android:gravity="center"
+            android:id="@+id/verify_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+                <ImageView
+
+                    android:id="@+id/verify_image"
+                    android:layout_width="@dimen/x65"
+                    android:layout_height="@dimen/x65"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@mipmap/home_sj_unselect"/>
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:gravity="center"
+            android:id="@+id/sign_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+                <ImageView
+                    android:layout_marginTop="3dp"
+                    android:id="@+id/sign_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@mipmap/home_shop_unselect" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:gravity="center"
+            android:id="@+id/video_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+                <ImageView
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/video_image"
+                    android:layout_width="30dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@mipmap/home_know_unselect" />
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:gravity="center"
+            android:id="@+id/flight_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+                <ImageView
+                    android:layout_marginTop="3dp"
+                    android:id="@+id/flight_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@mipmap/home_cq_unselect" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:gravity="center"
+            android:id="@+id/account_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+                <ImageView
+                    android:layout_marginTop="3dp"
+                    android:id="@+id/account_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@mipmap/home_my_unselect" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

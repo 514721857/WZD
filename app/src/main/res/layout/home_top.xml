@@ -1,0 +1,27 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/x80"
+    xmlns:cube_ptr="http://schemas.android.com/apk/res-auto"
+    android:background="@mipmap/home_top_bg">
+
+
+    <TextView
+        android:layout_gravity="center"
+        android:textSize="@dimen/x36"
+        android:textColor="@color/colorWihte"
+        android:id="@+id/home_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="标题" />
+
+    <ImageView
+        android:layout_margin="@dimen/x15"
+        android:gravity="center"
+        android:layout_gravity="right"
+        android:id="@+id/arrow"
+        android:layout_width="@dimen/x55"
+        android:layout_height="@dimen/x55"
+        cube_ptr:srcCompat="@mipmap/home_sign" />
+
+
+</FrameLayout>
