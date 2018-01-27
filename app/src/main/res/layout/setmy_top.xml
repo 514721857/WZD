@@ -1,0 +1,58 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cube_ptr="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/x80"
+    android:background="@mipmap/home_top_bg">
+
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_gravity="left"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+    <ImageView
+
+        android:layout_marginLeft="@dimen/x25"
+
+
+        android:id="@+id/setmy_back"
+        android:layout_width="@dimen/x40"
+        android:layout_height="@dimen/x50"
+        cube_ptr:srcCompat="@mipmap/back_icon" />
+    </LinearLayout>
+
+
+    <!--      android:layout_marginTop="@dimen/x10"
+        android:layout_marginBottom="@dimen/x10"
+
+        android:gravity="center"-->
+
+    <TextView
+
+        android:gravity="center_vertical"
+        android:layout_gravity="center"
+        android:textSize="@dimen/x36"
+        android:textColor="@color/colorWihte"
+        android:id="@+id/setmy_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="微指道" />
+
+
+    <TextView
+        android:layout_marginRight="@dimen/x25"
+        android:gravity="center_vertical"
+        android:layout_gravity="right"
+        android:textSize="@dimen/x28"
+        android:textColor="@color/colorWihte"
+        android:id="@+id/setmy_finsh"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="完成" />
+
+
+
+
+
+</FrameLayout>

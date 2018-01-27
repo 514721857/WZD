@@ -8,5 +8,12 @@
     <color name="colorTextGray">#a7a7a7</color>
     <color name="colorWihte">#ffffff</color>
     <color name="colorHomeBottom">#eeeeee</color>
+    <color name="unselectTextGray">#525252</color>
+    <color name="my_bg">#edecf3</color>
+    <color name="know_item_textcolor">#888887</color>
+
+    <drawable name="my_bg_press">#d7d7d7</drawable>
+    <drawable name="my_bg_nomal">#ffffff</drawable>
+
 
 </resources>

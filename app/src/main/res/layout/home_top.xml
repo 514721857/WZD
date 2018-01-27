@@ -12,13 +12,13 @@
         android:id="@+id/home_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="标题" />
+        android:text="微指道" />
 
     <ImageView
         android:layout_margin="@dimen/x15"
         android:gravity="center"
         android:layout_gravity="right"
-        android:id="@+id/arrow"
+        android:id="@+id/home_sign"
         android:layout_width="@dimen/x55"
         android:layout_height="@dimen/x55"
         cube_ptr:srcCompat="@mipmap/home_sign" />

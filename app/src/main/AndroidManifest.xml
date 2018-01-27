@@ -18,7 +18,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".module.common.login.LoginActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".module.My.set.SetMyActivity" />
+        <activity android:name=".module.Tale.company_brif.CompanyBrifActivity"></activity>
     </application>
 
 </manifest>

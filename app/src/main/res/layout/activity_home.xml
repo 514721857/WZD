@@ -21,7 +21,13 @@
         android:layout_weight="1" >
     </FrameLayout>
 
+    <View
+        android:id="@+id/item_line"
 
+        android:layout_width="match_parent"
+        android:layout_height="0.5px"
+        android:background="@color/colorTextGray"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,6 +35,8 @@
         android:background="@mipmap/home_bottom_bg" >
 
         <RelativeLayout
+            android:layout_marginTop="@dimen/x12"
+            android:layout_marginBottom="@dimen/x9"
             android:gravity="center"
             android:id="@+id/verify_layout"
             android:layout_width="0dp"
@@ -36,33 +44,60 @@
             android:layout_weight="1" >
 
                 <ImageView
-
+                    android:layout_centerHorizontal="true"
                     android:id="@+id/verify_image"
-                    android:layout_width="@dimen/x65"
-                    android:layout_height="@dimen/x65"
-                    android:layout_gravity="center_horizontal"
+                    android:layout_width="@dimen/x45"
+                    android:layout_height="@dimen/x45"
+
                     android:src="@mipmap/home_sj_unselect"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/x9"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/verify_image"
+                android:id="@+id/verify_text"
+                android:textSize="@dimen/x18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_title_real"
+               />
         </RelativeLayout>
 
 
 
         <RelativeLayout
+
+            android:layout_marginTop="@dimen/x12"
+            android:layout_marginBottom="@dimen/x9"
             android:gravity="center"
             android:id="@+id/sign_layout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1" >
                 <ImageView
-                    android:layout_marginTop="3dp"
+
                     android:id="@+id/sign_image"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center_horizontal"
+                    android:layout_width="@dimen/x45"
+                    android:layout_height="@dimen/x45"
+                    android:layout_centerHorizontal="true"
                     android:src="@mipmap/home_shop_unselect" />
+
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/x18"
+                android:layout_marginTop="@dimen/x9"
+                android:layout_below="@+id/sign_image"
+                android:id="@+id/sign_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/home_title_shop"/>
         </RelativeLayout>
 
 
         <RelativeLayout
+            android:layout_marginTop="@dimen/x12"
+            android:layout_marginBottom="@dimen/x9"
             android:gravity="center"
             android:id="@+id/video_layout"
             android:layout_width="0dp"
@@ -70,18 +105,33 @@
             android:layout_weight="1" >
 
                 <ImageView
-                    android:layout_marginTop="2dp"
+                    android:layout_centerHorizontal="true"
+
                     android:id="@+id/video_image"
-                    android:layout_width="30dp"
-                    android:layout_height="32dp"
+                    android:layout_width="@dimen/x45"
+                    android:layout_height="@dimen/x45"
                     android:layout_gravity="center_horizontal"
                     android:src="@mipmap/home_know_unselect" />
+
+            <TextView
+                android:textSize="@dimen/x18"
+                android:layout_marginTop="@dimen/x9"
+                android:layout_below="@+id/video_image"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/video_text"
+                android:text="@string/home_title_know"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+           />
 
         </RelativeLayout>
 
 
 
         <RelativeLayout
+            android:layout_marginTop="@dimen/x12"
+            android:layout_marginBottom="@dimen/x9"
             android:gravity="center"
             android:id="@+id/flight_layout"
             android:layout_width="0dp"
@@ -89,28 +139,54 @@
             android:layout_weight="1" >
 
                 <ImageView
-                    android:layout_marginTop="3dp"
+                    android:layout_centerHorizontal="true"
                     android:id="@+id/flight_image"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center_horizontal"
+                    android:layout_width="@dimen/x45"
+                    android:layout_height="@dimen/x45"
                     android:src="@mipmap/home_cq_unselect" />
+
+            <TextView
+                android:textSize="@dimen/x18"
+                android:layout_marginTop="@dimen/x9"
+                android:layout_below="@+id/flight_image"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/flight_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/home_title_tale"
+              />
         </RelativeLayout>
 
 
         <RelativeLayout
+            android:layout_marginTop="@dimen/x12"
+            android:layout_marginBottom="@dimen/x9"
             android:gravity="center"
             android:id="@+id/account_layout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1" >
                 <ImageView
-                    android:layout_marginTop="3dp"
+                    android:layout_centerHorizontal="true"
                     android:id="@+id/account_image"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="@dimen/x45"
+                    android:layout_height="@dimen/x45"
                     android:layout_gravity="center_horizontal"
                     android:src="@mipmap/home_my_unselect" />
+
+            <TextView
+
+                android:textSize="@dimen/x18"
+                android:layout_marginTop="@dimen/x9"
+                android:layout_below="@+id/account_image"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/account_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/home_title_my"
+               />
 
         </RelativeLayout>
 

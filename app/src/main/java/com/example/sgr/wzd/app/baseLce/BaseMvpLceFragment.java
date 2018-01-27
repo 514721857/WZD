@@ -9,6 +9,9 @@ import com.tz.mvp.framework.base.presenter.MvpPresenter;
 import com.tz.mvp.framework.support.lce.MvpLceView;
 import com.tz.mvp.framework.support.lce.impl.MvpLceFragment;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 /**
  * Created by Dream on 16/5/26.        MvpLceFragment
  */
@@ -17,6 +20,7 @@ public abstract class BaseMvpLceFragment< V extends MvpLceView, P extends MvpPre
     private View viewContent;//缓存视图
     private boolean isInit;
     private boolean isPullToRefresh;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -29,7 +33,9 @@ public abstract class BaseMvpLceFragment< V extends MvpLceView, P extends MvpPre
         if (parent != null){
             //如果存在,那么我就干掉,重写添加,这样的方式我们就可以缓存视图
             parent.removeView(viewContent);
+
         }
+        ButterKnife.bind(this, viewContent);
         return viewContent;
     }
 

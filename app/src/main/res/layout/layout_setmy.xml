@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/my_bg">
+
+
+
+
+    <LinearLayout
+        android:id="@+id/setmy_other"
+        android:layout_marginTop="@dimen/x24"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x90"
+        android:background="@color/colorWihte">
+
+    <com.example.sgr.wzd.widget.ClearEditText
+        android:paddingRight="@dimen/x39"
+        android:layout_marginLeft="@dimen/x39"
+        android:textColor="@color/colorTextGray"
+        android:textColorHint="@color/colorTextGray"
+        android:textSize="@dimen/x30"
+        android:background="@null"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/setmy_edit"
+        android:hint="填写姓名"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        />
+        </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/setmy_sex"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/x24"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x180"
+        android:background="@color/colorWihte">
+
+        <TextView
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorWihte"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/x30"
+            android:paddingLeft="@dimen/x39"
+
+            android:id="@+id/setmy_boy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="男" />
+
+        <TextView
+            android:paddingLeft="@dimen/x39"
+            android:textColor="@color/colorTextGray"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/x30"
+            android:id="@+id/setmy_girl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="女" />
+    </LinearLayout>
+
+</LinearLayout>

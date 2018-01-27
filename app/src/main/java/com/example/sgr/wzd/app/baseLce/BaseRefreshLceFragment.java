@@ -23,12 +23,12 @@ import butterknife.Unbinder;
 /**
  * 作者: Dream on 16/9/21 13:20
  * QQ:510278658
- * E-mail:510278658@qq.com
+ * E-mail:510278658@qq.comBaseMvpLceFragment
  */
 public abstract class BaseRefreshLceFragment< V extends MvpLceView, P extends MvpPresenter<V>> extends BaseMvpLceFragment< V, P> {
 
     //google下啦刷新组件也是可以的
-    private Unbinder unbinder;
+//    private Unbinder unbinder;
 
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
@@ -59,13 +59,15 @@ public abstract class BaseRefreshLceFragment< V extends MvpLceView, P extends Mv
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         //获取数据
+//        unbinder = ButterKnife.bind(getActivity());
     }
 
     @Override
     public void initContentView(View contentView) {
+        ButterKnife.bind(this, contentView);
         initNavigation(contentView);
         initRefreshView();
-        unbinder = ButterKnife.bind(getActivity());
+
     }
 
     @Override
@@ -97,6 +99,15 @@ public abstract class BaseRefreshLceFragment< V extends MvpLceView, P extends Mv
         });
 
     }
+    //提供给子类决定是否需要下拉刷新功能
+    public void setRefresh(boolean isRefresh) {
+        //是否可以下拉刷新,true代表可以,false代表不支持
+        mSwipeRefreshLayout.setEnabled(isRefresh);
+        recyclerAdapter.setEnableLoadMore(isRefresh);
+
+
+    }
+
     public abstract BaseQuickAdapter bindAdapter();
     //提供给子类决定是否需要下拉刷新功能
 
@@ -130,9 +141,13 @@ public abstract class BaseRefreshLceFragment< V extends MvpLceView, P extends Mv
             }
         }
         if (size < pagesize) {
+
+//            recyclerAdapter.setEnableLoadMore(false);
+
+
             //第一页如果不够一页就不显示没有更多数据布局
             recyclerAdapter.loadMoreEnd(isRefresh);
-            Toast.makeText(getActivity(), "没有更多的数据", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getActivity(), "没有更多的数据", Toast.LENGTH_SHORT).show();
         } else {
             recyclerAdapter.loadMoreComplete();
         }

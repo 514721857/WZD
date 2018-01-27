@@ -2,9 +2,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/my_bg"
     xmlns:cube_ptr="http://schemas.android.com/apk/res-auto">
 
     <com.example.sgr.wzd.widget.TextItem
+        android:background="@drawable/myitem_selector"
+        android:id="@+id/my_head"
+        android:layout_marginTop="@dimen/x24"
         cube_ptr:left_text="@string/my_head"
         cube_ptr:right_img_visbile="0"
         cube_ptr:right_text_visbile="8"
@@ -12,8 +16,42 @@
         android:layout_height="@dimen/x135"/>
 
     <com.example.sgr.wzd.widget.TextItem
+        android:background="@drawable/myitem_selector"
+        android:id="@+id/my_name"
         cube_ptr:left_text="@string/my_name"
         android:layout_width="match_parent"
         android:layout_height="@dimen/x80"/>
+
+    <com.example.sgr.wzd.widget.TextItem
+        android:background="@drawable/myitem_selector"
+        android:id="@+id/my_job"
+        cube_ptr:left_text="@string/my_job"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x80"/>
+
+    <com.example.sgr.wzd.widget.TextItem
+        android:background="@drawable/myitem_selector"
+        android:id="@+id/my_sex"
+        cube_ptr:left_text="@string/my_sex"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x80"/>
+
+    <com.example.sgr.wzd.widget.TextItem
+        android:background="@drawable/myitem_selector"
+        android:id="@+id/my_phone"
+        cube_ptr:line_visbile="8"
+        cube_ptr:left_text="@string/my_phone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x80"/>
+
+    <com.example.sgr.wzd.widget.TextItem
+        android:background="@drawable/myitem_selector"
+        android:id="@+id/my_account"
+        cube_ptr:line_visbile="8"
+        android:layout_marginTop="@dimen/x24"
+        cube_ptr:left_text="@string/my_account"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x80"/>
+
 
 </LinearLayout>

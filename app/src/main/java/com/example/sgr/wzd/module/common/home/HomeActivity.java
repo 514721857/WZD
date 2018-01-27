@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sgr.wzd.R;
 import com.example.sgr.wzd.app.BaseMvpActivity;
+import com.example.sgr.wzd.app.MyApplication;
 import com.example.sgr.wzd.app.baseLce.BaseLceActivity;
 import com.example.sgr.wzd.module.Know.KnowFragment;
 import com.example.sgr.wzd.module.My.MyFragment;
@@ -20,6 +22,7 @@ import com.example.sgr.wzd.module.common.CommonPresenter;
 import com.example.sgr.wzd.module.common.CommonView;
 import com.tz.mvp.framework.support.view.MvpActivity;
 
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class HomeActivity extends BaseMvpActivity<CommonView,CommonPresenter> implements CommonView {
@@ -31,44 +34,69 @@ public class HomeActivity extends BaseMvpActivity<CommonView,CommonPresenter> im
     private RealFragment realFragment;
 
 
-    @InjectView(R.id.verify_layout)
+    @BindView(R.id.verify_layout)
     View verify_layout;
 
 
-    @InjectView(R.id.sign_layout)
+    @BindView(R.id.sign_layout)
     View sign_layout;
 
-    @InjectView(R.id.video_layout)
+    @BindView(R.id.video_layout)
     View video_layout;
 
-    @InjectView(R.id.flight_layout)
+    @BindView(R.id.flight_layout)
     View flight_layout;
 
-    @InjectView(R.id.account_layout)
+    @BindView(R.id.account_layout)
     View account_layout;
 
 
 
 
-    @InjectView(R.id.verify_image)
+    @BindView(R.id.verify_image)
     ImageView verify_image;
 
-    @InjectView(R.id.flight_image)
+    @BindView(R.id.flight_image)
     ImageView flight_image;
 
-    @InjectView(R.id.sign_image)
+    @BindView(R.id.sign_image)
     ImageView sign_image;
 
-    @InjectView(R.id.video_image)
+    @BindView(R.id.video_image)
     ImageView video_image;
 
-    @InjectView(R.id.account_image)
+    @BindView(R.id.account_image)
     ImageView account_image;
+
+
+    @BindView(R.id.verify_text)
+    TextView verify_text;
+
+    @BindView(R.id.sign_text)
+    TextView sign_text;
+
+    @BindView(R.id.video_text)
+    TextView video_text;
+
+    @BindView(R.id.flight_text)
+    TextView flight_text;
+
+    @BindView(R.id.account_text)
+    TextView account_text;
+
+
+    @BindView(R.id.home_sign)
+    ImageView home_sign;
+
+    @BindView(R.id.home_title)
+    TextView home_title;
+
 
     private int chooseIndex = 0;//选择项
     private FragmentTransaction transaction;
     long firstTime;
     private boolean iscycle;
+
 
 
     @Override
@@ -84,6 +112,7 @@ public class HomeActivity extends BaseMvpActivity<CommonView,CommonPresenter> im
     @Override
     protected void initView() {
         super.initView();
+        setTabSelection(0);
     }
 
     @OnClick({R.id.verify_layout, R.id.sign_layout, R.id.video_layout, R.id.flight_layout,R.id.account_layout})
@@ -92,18 +121,22 @@ public class HomeActivity extends BaseMvpActivity<CommonView,CommonPresenter> im
             case R.id.verify_layout:
                 chooseIndex = 0;
                 setTabSelection(0);
+
                 break;
             case R.id.sign_layout:
                 chooseIndex = 1;
                 setTabSelection(1);
+
                 break;
             case R.id.video_layout:
                 chooseIndex = 2;
                 setTabSelection(2);
+
                 break;
             case R.id.flight_layout:
                 chooseIndex = 3;
                 setTabSelection(3);
+
                 break;
             case R.id.account_layout:
                 chooseIndex = 4;
@@ -129,16 +162,18 @@ public class HomeActivity extends BaseMvpActivity<CommonView,CommonPresenter> im
 
                     realFragment = new RealFragment();
                     transaction.add(R.id.content, realFragment);
+//                    transaction.add(R.id.content, realFragment);
                 } else {
 
                     transaction.show(realFragment);
                 }
                 transaction.commit();
-
+                home_title.setText(getString(R.string.home_title_real));
+                home_sign.setVisibility(View.GONE);
                 break;
             case 1:
                 if (shopFragment == null) {
-                    shopFragment = new shopFragment();
+                    shopFragment = new ShopFragment();
 
                     transaction.add(R.id.content, shopFragment);
                 } else {
@@ -146,11 +181,14 @@ public class HomeActivity extends BaseMvpActivity<CommonView,CommonPresenter> im
                     transaction.show(shopFragment);
                 }
                 transaction.commit();
+
+                home_sign.setVisibility(View.GONE);
+                home_title.setText(getString(R.string.home_title_shop));
                 break;
             case 2:
                 if (knowFragment == null) {
 
-                    knowFragment = new knowFragment();
+                    knowFragment = new KnowFragment();
                     transaction.add(R.id.content, knowFragment);
                 } else {
 
@@ -159,30 +197,38 @@ public class HomeActivity extends BaseMvpActivity<CommonView,CommonPresenter> im
                 transaction.commit();
 //                }
 
-
+                home_sign.setVisibility(View.VISIBLE);
+                home_title.setText(getString(R.string.home_title_real));
                 break;
             case 3:
-                if (knowFragment == null) {
+                if (taleFragment == null) {
 
-                    knowFragment = new FlightFragment();
-                    transaction.add(R.id.content, knowFragment);
+                    taleFragment = new TaleFragment();
+                    transaction.add(R.id.content, taleFragment);
                 } else {
 
-                    transaction.show(knowFragment);
+                    transaction.show(taleFragment);
                 }
                 transaction.commit();
+
+                home_sign.setVisibility(View.GONE);
+                home_title.setText(getString(R.string.home_title_tale));
+
                 break;
 
             case 4:
                 if (myFragment == null) {
 
-                    myFragment = new myFragment();
+                    myFragment = new MyFragment();
                     transaction.add(R.id.content, myFragment);
                 } else {
 
                     transaction.show(myFragment);
                 }
                 transaction.commit();
+
+                home_sign.setVisibility(View.GONE);
+                home_title.setText(getString(R.string.home_title_my));
                 break;
 
 
@@ -200,33 +246,33 @@ public class HomeActivity extends BaseMvpActivity<CommonView,CommonPresenter> im
         switch (index) {
             case 0:
                 // 当点击了tab时，改变控件的图片和文字颜色
-                verify_image.setImageResource(R.mipmap.main_verify_select);
+                verify_image.setImageResource(R.mipmap.home_sj_select);
                 verify_text.setTextColor(getResources().getColorStateList(
-                        R.color.main_text_select));
+                       R.color.colorPrimary));
                 break;
             case 1:
-                sign_image.setImageResource(R.mipmap.main_sign_select);
-                sign_text.setTextColor(getResources().getColorStateList(
-                        R.color.main_text_select));
+                sign_image.setImageResource(R.mipmap.home_shop_select);
+              sign_text.setTextColor(getResources().getColorStateList(
+                        R.color.colorPrimary));
                 break;
             case 2:
-                video_image.setImageResource(R.mipmap.main_video_select);
+                video_image.setImageResource(R.mipmap.home_know_select);
                 video_text.setTextColor(getResources().getColorStateList(
-                        R.color.main_text_select));
+                        R.color.colorPrimary));
                 break;
 
             case 3:
-                flight_image.setImageResource(R.mipmap.main_fight_select);
-                flight_text.setTextColor(getResources().getColorStateList(
-                        R.color.main_text_select));
+                flight_image.setImageResource(R.mipmap.home_cq_select);
+               flight_text.setTextColor(getResources().getColorStateList(
+                        R.color.colorPrimary));
 
                 break;
 
 
             case 4:
-                account_image.setImageResource(R.mipmap.main_account_select);
-                account_text.setTextColor(getResources().getColorStateList(
-                        R.color.main_text_select));
+                account_image.setImageResource(R.mipmap.home_my_select);
+               account_text.setTextColor(getResources().getColorStateList(
+                        R.color.colorPrimary));
 
                 break;
 
@@ -240,22 +286,38 @@ public class HomeActivity extends BaseMvpActivity<CommonView,CommonPresenter> im
      * 清除掉所有的选中状态。
      */
     private void clearSelection() {
-        flight_image.setImageResource(R.mipmap.main_fight_no);
+        account_image.setImageResource(R.mipmap.home_my_unselect);
+        flight_image.setImageResource(R.mipmap.home_cq_unselect);
+        video_image.setImageResource(R.mipmap.home_know_unselect);
+        sign_image.setImageResource(R.mipmap.home_shop_unselect);
+        verify_image.setImageResource(R.mipmap.home_sj_unselect);
+
         flight_text.setTextColor(getResources().getColor(
-                R.color.main_text));
-        verify_image.setImageResource(R.mipmap.main_verify_no);
+                R.color.unselectTextGray));
         verify_text.setTextColor(getResources().getColor(
-                R.color.main_text));
-        sign_image.setImageResource(R.mipmap.main_sign_no);
+                R.color.unselectTextGray));
         sign_text.setTextColor(getResources().getColor(
-                R.color.main_text));
-        video_image.setImageResource(R.mipmap.main_video_no);
+                R.color.unselectTextGray));
         video_text.setTextColor(getResources().getColor(
-                R.color.main_text));
+                R.color.unselectTextGray));
+        account_text.setTextColor(getResources().getColor(
+                R.color.unselectTextGray));
+  /*      flight_image.setImageResource(R.mipmap.main_fight_no);
+   *//*     flight_text.setTextColor(getResources().getColor(
+                R.color.main_text));*//*
+        verify_image.setImageResource(R.mipmap.main_verify_no);
+    *//*    verify_text.setTextColor(getResources().getColor(
+                R.color.main_text));*//*
+        sign_image.setImageResource(R.mipmap.main_sign_no);
+     *//*   sign_text.setTextColor(getResources().getColor(
+                R.color.main_text));*//*
+        video_image.setImageResource(R.mipmap.main_video_no);
+  *//*      video_text.setTextColor(getResources().getColor(
+                R.color.main_text));*//*
 
         account_image.setImageResource(R.mipmap.main_account_no);
-        account_text.setTextColor(getResources().getColor(
-                R.color.main_text));
+  *//*      account_text.setTextColor(getResources().getColor(
+                R.color.main_text));*/
     }
 
     private void hideFragments(FragmentTransaction transaction) {
@@ -270,8 +332,8 @@ public class HomeActivity extends BaseMvpActivity<CommonView,CommonPresenter> im
 
             transaction.hide(knowFragment);
         }
-        if (knowFragment != null) {
-            transaction.hide(knowFragment);
+        if (taleFragment != null) {
+            transaction.hide(taleFragment);
         }
         if (myFragment != null) {
             transaction.hide(myFragment);
@@ -288,7 +350,7 @@ public class HomeActivity extends BaseMvpActivity<CommonView,CommonPresenter> im
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
+    public void onSaveInstanceState(Bundle outState) {
 
         outState.putBoolean("iscycle", true);
         outState.putInt("chooseIndex", chooseIndex);
@@ -310,10 +372,10 @@ public class HomeActivity extends BaseMvpActivity<CommonView,CommonPresenter> im
             long secondTime = System.currentTimeMillis();
             if (secondTime - firstTime > 1000) {
 
-                Toast.makeText(MainActivity.this,getString(R.string.app_back), Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeActivity.this,getString(R.string.app_back), Toast.LENGTH_SHORT).show();
                 firstTime = secondTime;
             } else {
-                MyApplication.getInstance().exit();
+              finish();
             }
         }
         return true;

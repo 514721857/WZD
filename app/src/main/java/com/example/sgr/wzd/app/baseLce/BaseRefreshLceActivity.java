@@ -136,6 +136,13 @@ public abstract class BaseRefreshLceActivity <V extends MvpLceView, P extends Mv
         });
 
     }
+    //提供给子类决定是否需要下拉刷新功能
+    public void setRefresh(boolean isRefresh) {
+        //是否可以下拉刷新,true代表可以,false代表不支持
+        mSwipeRefreshLayout.setEnabled(isRefresh);
+        recyclerAdapter.setEnableLoadMore(isRefresh);
+
+    }
     public abstract BaseQuickAdapter bindAdapter();
     @Override
     public void bindData(Object data,String type) {

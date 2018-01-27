@@ -48,7 +48,7 @@ public class TextItem extends RelativeLayout {
         if(line_visbile==View.VISIBLE){
             lineView.setVisibility(View.VISIBLE);
         }else{
-            lineView.setVisibility(View.GONE);
+            lineView.setVisibility(View.INVISIBLE);
         }
 
         if(right_img_visbile==View.VISIBLE){
